@@ -1,1 +1,64 @@
+body {
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+    font-family:'Times New Roman', Times, serif;
+}
 
+h1 {
+    border: red, dashed, 2px;
+    background-color: blue;
+    border-radius: 2px;
+    padding: 2px;
+    margin: 2px;
+    width: 60%;
+    text-align: center;
+    font-size: 1.8em; margin-left: 30px;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    border-left: double, 2 px, purple;
+}
+
+p{
+    line-height: 2.2em;
+}
+
+img{
+    float: left;
+    width: 300px;
+    border: red, solid, 3px;
+}
+
+a:link{
+    color: blue;
+}
+
+a:visited{
+    color: purple;
+}
+
+a:hover{
+    color:blueviolet
+}
+
+
+a:active{
+    color:brown;
+}
+
+.highlight {
+    font-weight: bold;
+    background-color: red;
+    padding: 3px;
+    color: blueviolet;
+}
+
+.flex-container {
+  display: flex; flex-wrap: wrap;
+  padding: 10px;
+}
