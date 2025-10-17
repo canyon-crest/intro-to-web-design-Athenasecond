@@ -4,6 +4,12 @@ body {
     font-family:'Times New Roman', Times, serif;
 }
 
+#container {
+    color:red;
+    width: 1000px;
+
+}
+
 h1 {
     border: red, dashed, 2px;
     background-color: blue;
@@ -58,7 +64,55 @@ a:active{
     color: blueviolet;
 }
 
-.flex-container {
-  display: flex; flex-wrap: wrap;
-  padding: 10px;
+#sidebar {
+    background-color: orangered;
+    width: 175px;
+    float: left;
+    border: 2px solid blue;
+    margin: 15px;
+    line-height:1.25em;
+}
+
+#sidebar h3{
+    padding: 5px;
+    width: 100px;
+    background: none;
+}
+
+@media (max-width: 1200px) {
+    #container{
+        background-color:crimson;
+        width: 800px;
+    }
+}
+
+@media(max-width: 992px){
+    #container{
+        width: 100%;
+    }
+    #container, p{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    h1, h2, h3, p, div{
+        background-color: rebeccapurple;
+    }
+    body{
+        padding: 20px;
+    }
+}
+
+@media(max-width:768px){
+    #sidebar{
+        display:none;
+    }
+    img,#pic1, #pic2{
+        clear:both;
+        border:none;
+
+    }
+    h3{
+        margin: 0 auto;
+    }
 }
