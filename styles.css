@@ -1,118 +1,212 @@
-body {
-    background-color: antiquewhite;
-    color: rgb(0, 0, 0);
-    font-family:'Times New Roman', Times, serif;
+:root{
+  --green: #6A8D73;
+  --cream: #F4FDD9;
+  --mint:  #E4FFE1;
+  --sand:  #FFE8C2;
+  --amber: #F0A868;
+
+  --bg: var(--cream);
+  --ink: #2b2b2b;
+  --muted: #5c6658;
+  --primary: var(--green);
+  --primary-dark:#4d6b56;
+  --accent: var(--amber);
+  --card: #ffffff;
+  --line: rgba(0,0,0,0.08);
+  --shadow: 0 8px 30px rgba(0,0,0,.06);
+
+  /* card-specific colors */
+  --c1-bg: var(--mint);
+  --c1-ink: #4b8f64;
+  --c1-br: #b8f2c5;
+
+  --c2-bg: var(--sand);
+  --c2-ink: #a66615;
+  --c2-br: #ffd79b;
+
+  --c3-bg: var(--cream);
+  --c3-ink: #6a8d73;
+  --c3-br: #d6e9cc;
 }
 
-#container {
-    color:red;
-    width: 1000px;
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
 
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-    border: red, dashed, 2px;
-    background-color: blue;
-    border-radius: 2px;
-    padding: 2px;
-    margin: 2px;
-    width: 60%;
-    text-align: center;
-    font-size: 1.8em; margin-left: 30px;
-
+#container{
+  width: 1100px;
+  margin: 40px auto;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
-h2 {
-    text-align: center;
+.layout{ width: 100%; }
+
+#sidebar{
+  float: right;
+  width: 28%;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 6px 0 18px 24px;
 }
-
-h3 {
-    border-left: double, 2 px, purple;
-}
-
-p{
-    line-height: 2.2em;
-}
-
-img{
-    float: left;
-    width: 300px;
-    border: red, solid, 3px;
-}
-
-a:link{
-    color: blue;
-}
-
-a:visited{
-    color: purple;
-}
-
-a:hover{
-    color:blueviolet
-}
-
-
-a:active{
-    color:brown;
-}
-
-.highlight {
-    font-weight: bold;
-    background-color: red;
-    padding: 3px;
-    color: blueviolet;
-}
-
-#sidebar {
-    background-color: orangered;
-    width: 175px;
-    float: left;
-    border: 2px solid blue;
-    margin: 15px;
-    line-height:1.25em;
-}
-
 #sidebar h3{
-    padding: 5px;
-    width: 100px;
-    background: none;
+  margin: 0 0 10px 0;
+  color: var(--green);
+}
+#sidebar ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#sidebar li{
+  padding: 6px 0 6px 22px;
+  border-bottom: 1px dashed var(--line);
+  position: relative;
+}
+#sidebar li::before{
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: var(--accent);
+}
+#sidebar li:last-child{ border-bottom: none; }
+
+.info{ float: left; width: 68%; }
+
+.cf::after{ content:""; display:block; clear:both; }
+
+.site-header{ text-align: center; }
+
+.site-header h1{
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--green);
+  background-color: var(--mint);
+  border: 2px solid var(--c1-br);
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
-@media (max-width: 1200px) {
-    #container{
-        background-color:crimson;
-        width: 800px;
-    }
+.site-header h2{
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0 28px 0;
+  font-size: 1.05rem;
 }
 
-@media(max-width: 992px){
-    #container{
-        width: 100%;
-    }
-    #container, p{
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-    h1, h2, h3, p, div{
-        background-color: rebeccapurple;
-    }
-    body{
-        padding: 20px;
-    }
+h3{
+  margin: 0 0 10px 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--green);
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
 }
 
-@media(max-width:768px){
-    #sidebar{
-        display:none;
-    }
-    img,#pic1, #pic2{
-        clear:both;
-        border:none;
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.card:hover{
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transform: translateY(-2px);
+}
 
-    }
-    h3{
-        margin: 0 auto;
-    }
+.info .card:nth-of-type(1){
+  background: var(--c1-bg);
+  border-color: var(--c1-br);
+}
+.info .card:nth-of-type(1) h3{ color: var(--c1-ink); }
+.info .card:nth-of-type(1) .para{ border-left-color: var(--c1-ink); }
+
+.info .card:nth-of-type(2){
+  background: var(--c2-bg);
+  border-color: var(--c2-br);
+}
+.info .card:nth-of-type(2) h3{ color: var(--c2-ink); }
+.info .card:nth-of-type(2) .para{ border-left-color: var(--c2-ink); }
+
+.info .card:nth-of-type(3){
+  background: var(--c3-bg);
+  border-color: var(--c3-br);
+}
+.info .card:nth-of-type(3) h3{ color: var(--c3-ink); }
+.info .card:nth-of-type(3) .para{ border-left-color: var(--c3-ink); }
+
+.para{ margin-top: 8px; }
+.p1, .p2, .p3{ padding-left: 12px; }
+
+.highlight{
+  font-weight: 700;
+  background: #fff7ed;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+img{ max-width: 100%; height: auto; display: block; }
+
+#pic1, #pic2, #pic3{
+  width: 42%;
+  float: left;
+  margin: 6px 18px 8px 0;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+#pic2{
+  float: right;
+  margin: 6px 0 8px 18px;
+}
+
+a:link{ color: var(--green); text-decoration: none; }
+a:visited{ color: #7c3aed; }
+a:hover{ color: var(--accent); text-decoration: underline; }
+a:active{ color: #b91c1c; }
+
+.site-footer{
+  margin-top: 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+@media (max-width: 1200px){
+  #container{ width: 900px; }
+}
+@media (max-width: 992px){
+  #container{
+    width: 95%;
+    padding: 22px;
+  }
+  #sidebar, .info{ float: none; width: 100%; }
+  #sidebar{ margin: 0 0 16px 0; }
+}
+@media (max-width: 768px){
+  #pic1, #pic2, #pic3{
+    float: none;
+    width: 100%;
+    margin: 10px 0 14px 0;
+  }
+  .card{ padding: 16px; }
+  .site-header h1{ font-size: 1.6rem; }
+  .site-header h2{ font-size: 1rem; }
 }
