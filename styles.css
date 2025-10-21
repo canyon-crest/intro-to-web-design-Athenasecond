@@ -51,27 +51,6 @@ html { scroll-behavior: smooth; }
   outline-offset: 3px;
 }
 
-body:has(#paletteSwitch:checked){
-  --green:#5B3CC4;
-  --cream:#F3ECFF;
-  --mint:#E3DCFF;
-  --sand:#FFD9D9;
-  --amber:#FFB84D;
-  --bg:var(--cream);
-  --ink:#202020;
-  --muted:#555;
-  --line:rgba(0,0,0,.12);
-  --c1-bg:var(--mint);
-  --c1-ink:#4a3dbb;
-  --c1-br:rgba(91,60,196,.25);
-  --c2-bg:var(--sand);
-  --c2-ink:#a04343;
-  --c2-br:rgba(255,145,145,.4);
-  --c3-bg:var(--cream);
-  --c3-ink:#5B3CC4;
-  --c3-br:rgba(91,60,196,.18);
-}
-
 }
 
 *{box-sizing:border-box;}
